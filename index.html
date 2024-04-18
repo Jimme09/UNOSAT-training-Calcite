@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthfacilities_Webmap</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="NLCS logo.png" />
+    <!-- calcite cdn -->
+
+    <script
+      src="https://js.arcgis.com/calcite-components/2.7.1/calcite.esm.js"
+      type="module"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/calcite-components/2.7.1/calcite.css"
+    />
+
+    <!-- esri CDN -->
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.29/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.29/"></script>
+
+    <!-- reference to css and js -->
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js"></script>
+  </head>
+  <body class="calcite-theme">
+    <calcite-shell>
+      <calcite-navigation slot="header">
+        <calcite-action id="logo" slot="navigation-action" compact
+          ><img
+            src="Redcross.jpg"
+            style="width: 60px; height: 60px"
+            alt="health logo"
+        /></calcite-action>
+        <calcite-navigation-logo
+          id="app_description"
+          slot="logo"
+          heading="Health Facilities"
+          description="Health facilities in Thimphu"
+        ></calcite-navigation-logo>
+
+        <calcite-action
+          slot="content-end"
+          id="app-details-action"
+          appearance="transparent"
+          scale="m"
+          text="app details"
+          icon="information"
+        ></calcite-action>
+      </calcite-navigation>
+
+      <!-- left panel -->
+      <calcite-shell-panel slot="panel-start">
+        <calcite-panel>
+          <calcite-block heading="Map legend" collapsible close>
+            <calcite-icon slot="icon" icon="legend"></calcite-icon>
+            <div id="legend-container"></div>
+          </calcite-block>
+
+          <calcite-block heading="Layer List" collapsible close>
+            <calcite-icon slot="icon" icon="layers"></calcite-icon>
+            <div id="layer-list"></div>
+          </calcite-block>
+        </calcite-panel>
+      </calcite-shell-panel>
+
+      <!-- main map area -->
+      <calcite-panel>
+        <div id="Viewdiv"></div>
+      </calcite-panel>
+
+      <!-- right panel
+      <calcite-shell-panel slot="panel-end"></calcite-shell-panel> -->
+
+      <!-- MODAL area -->
+      <calcite-modal id="app-details-modal">
+        <h3 slot="header">Welcome</h3>
+        <div slot="content">
+          <calcite-label>
+            Welcome to Thimphu Health facilities Map, your comprehensive guide
+            to the health centres in the heart of Bhutan's capital! Explore the
+            intricate layers of Thimphu's infrastructure with ease. Especially
+            the different health facilities available in the city, our
+            application provides you with essential insights to find the health
+            centres nearest to you in the city seamlessly. Lets keep our
+            citizens healthy and well informed!
+          </calcite-label>
+        </div>
+        <div slot="back">
+          <calcite-label layout="inline">
+            United Nations Satellite Centre (UNOSAT)
+          </calcite-label>
+        </div>
+      </calcite-modal>
+    </calcite-shell>
+  </body>
+</html>
